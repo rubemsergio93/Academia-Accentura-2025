@@ -15,7 +15,9 @@ Cypress.Commands.add('enterVehicleData', () => {
 });
 
 Cypress.Commands.add('enterInsurantData', () => {
-  insurantPage.fillInsurantData();
+  cy.fixture('userData').then(user => {
+    insurantPage.fillInsurantData(user);
+  });
 });
 
 Cypress.Commands.add('enterProductData', () => {
@@ -27,5 +29,7 @@ Cypress.Commands.add('selectPriceOption', () => {
 });
 
 Cypress.Commands.add('sendQuote', () => {
-  sendQuotePage.fillQuoteData();
+  cy.fixture('userData').then(user => {
+    sendQuotePage.fillQuoteData(user);
+  });
 });

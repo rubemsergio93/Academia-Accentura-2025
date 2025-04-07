@@ -1,22 +1,17 @@
 class InsurantPage {
-  fillInsurantData() {
-    cy.get('#firstname').type('Pedro');
-    cy.get('#lastname').type('Silva');
-    cy.get('#birthdate').type('05/25/1980');
-    
-    // Força o clique no radio button "Male"
-    cy.get('input[name="Gender"][value="Male"]').check({ force: true });
-
-    cy.get('#streetaddress').type('Rua Exemplo, 123');
-    cy.get('#country').select('Brazil');
-    cy.get('#zipcode').type('12345678');
-    cy.get('#city').type('São Paulo');
-    cy.get('#occupation').select('Employee');
-
-    // Força o clique no checkbox "Speeding"
-    cy.get('input[name="Hobbies"][value="Speeding"]').check({ force: true });
-
+  fillInsurantData(user) {
+    cy.get('#firstname').type(user.firstname);
+    cy.get('#lastname').type(user.lastname);
+    cy.get('#birthdate').type(user.birthdate);
+    cy.get(`input[name="Gender"][value="${user.gender}"]`).check({ force: true });
+    cy.get('#streetaddress').type(user.address);
+    cy.get('#country').select(user.country);
+    cy.get('#zipcode').type(user.zipcode);
+    cy.get('#city').type(user.city);
+    cy.get('#occupation').select(user.occupation);
+    cy.get(`input[name="Hobbies"][value="${user.hobby}"]`).check({ force: true });
     cy.get('#nextenterproductdata').click();
   }
 }
+
 export default InsurantPage;

@@ -1,0 +1,14 @@
+{
+    "firstname": "Pedro",
+    "lastname": "Silva",
+    "birthdate": "05/25/1980",
+    "gender": "Male",
+    "address": "Rua Exemplo, 123",
+    "country": "Brazil",
+    "zipcode": "12345678",
+    "city": "São Paulo",
+    "occupation": "Employee",
+    "hobby": "Speeding",
+    "phone": "11999999999",
+    "username": "joaosilva"
+  }

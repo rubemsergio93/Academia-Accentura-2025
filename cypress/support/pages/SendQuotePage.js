@@ -1,11 +1,12 @@
 class SendQuotePage {
-  fillQuoteData() {
-    cy.get('#email').type('joao@example.com');
-    cy.get('#phone').type('11999999999');
-    cy.get('#username').type('joaosilva');
-    cy.get('#password').type('Senha123');
-    cy.get('#confirmpassword').type('Senha123');
+  fillQuoteData(user) {
+    cy.get('#email').type(Cypress.env('user_email'));
+    cy.get('#phone').type(user.phone);
+    cy.get('#username').type(user.username);
+    cy.get('#password').type(Cypress.env('user_password'));
+    cy.get('#confirmpassword').type(Cypress.env('user_password'));
     cy.get('#sendemail').click();
   }
 }
+
 export default SendQuotePage;
